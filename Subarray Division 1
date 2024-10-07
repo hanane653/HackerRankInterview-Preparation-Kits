@@ -1,0 +1,25 @@
+public static int birthday(List<int> s, int d, int m)
+    {
+        int res = 0;
+        
+            for (int i = 0; i <= s.Count - m; i++)  // Ensure loop covers the last valid segment
+    {
+        int sum = 0;
+
+        // Calculate the sum of the segment starting at index i and length m
+        for (int j = i; j < i + m; j++)
+        {
+            sum += s[j];
+        }
+
+        // Check if the sum matches the desired value
+        if (sum == d)
+        {
+            res++;
+        }
+    }
+            
+        return res;
+    }
+
+}
